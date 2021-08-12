@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.RestaurantDetailsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbarRestaurant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        android:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarRestaurantDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            app:layout_scrollFlags="scroll|enterAlways"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutToShowFavRes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_below="@+id/toolbarRestaurant">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_from_menu_listed_below"
+            android:textColor="#000"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_weight="9.2"
+            android:layout_margin="5dp"/>
+
+        <ImageView
+            android:id="@+id/imgFavouritesIcon3"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:src="@drawable/dislike"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:layout_weight="0.8"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerRestaurantDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutToShowFavRes"
+        android:layout_margin="2dp"/>
+
+    <Button
+        android:id="@+id/btnProceedToCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/proceed_to_cart"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:textAllCaps="false"
+        android:textColor="#fff"/>
+
+    <RelativeLayout
+        android:id="@+id/progressLayoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutToShowFavRes"
+        android:background="#fff">
+
+        <ProgressBar
+            android:id="@+id/progressBarDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

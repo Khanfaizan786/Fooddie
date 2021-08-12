@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.CartActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbarMyCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        android:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            app:layout_scrollFlags="scroll|enterAlways"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/txtCartInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ordering_from"
+        android:layout_margin="10dp"
+        android:textSize="17sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_below="@+id/toolbarMyCart"/>
+
+    <LinearLayout
+        android:id="@+id/layoutCart"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimary"
+        android:layout_below="@+id/txtCartInfo"
+        android:orientation="horizontal" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:id="@+id/recyclerCart"
+        android:layout_below="@id/layoutCart"/>
+
+    <Button
+        android:id="@+id/btnPlaceOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="@string/place_order"
+        android:textColor="#fff"
+        android:textAllCaps="false"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
